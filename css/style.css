@@ -1,0 +1,64 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Edu Tas Beginner, sans-serif;
+}
+
+/* Prima parte */
+
+header {
+    background-image: url(../img/wall.png);
+}
+
+main {
+    background-image: url(../img/cork.png);
+}
+
+.title {
+    font-size: 60px;
+}
+
+.photo-holder {
+    position: relative;
+    box-shadow: 3px 3px rgb(78, 78, 78);
+    transition: transform .2s;
+}
+
+.photo-holder:hover {
+    z-index: 1;
+    transform: scale(1.1) rotate(10deg);
+}
+
+.pin {
+    position: absolute;
+    top: -15px;
+}
+
+.date {
+    font-family: Sometype Mono, monospace;
+    font-size: 20px;
+}
+
+/* Seconda parte */
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(71, 71, 71, 0.5);
+    z-index: 1;
+}
+
+button {
+    z-index: 1;
+}
+
+.display-none {
+    display: none;
+}
