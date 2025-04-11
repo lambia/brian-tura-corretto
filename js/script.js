@@ -17,20 +17,20 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/")
     });
 
 
+let button = document.getElementById('closer');
 let overlay = document.getElementById('overlay');
-let overlayHolder = document.getElementById('overlay-holder');
+//Se riscrivo l'innerHTML dell'intero overlay-holder, viene distrutto e ricreato.
+//Anche il bottone che contiene viene distrutto e ricreato, e perde l'evento associato
+//Ho inserito in index.html già un'immagine vuota, così riscrivo solo quella, senza toccare il bottone
+let overlayImg = document.querySelector('#overlay-holder img');
 
 // Funzione per mostrare e nascondere l'overlay
 function display() {
     overlay.style.display = "flex";
-    let placeHolder = overlayHolder.innerHTML;
-    overlayHolder.innerHTML = `<img class="img-fluid" src="${event.target.src}" alt="">` + overlayHolder.innerHTML;
-
-    let button = document.getElementById('closer');
-    button.addEventListener("click", () => {
-        overlay.style.display = "none";
-        overlayHolder.innerHTML = placeHolder;
-    });
+    overlayImg.src = event.target.src;
 };
 
-
+//Ora posso gestire il button
+button.addEventListener("click", () => {
+    overlay.style.display = "none";
+});
